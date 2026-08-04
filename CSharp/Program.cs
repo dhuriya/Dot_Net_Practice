@@ -1,0 +1,18 @@
+﻿using System;
+using CSharp.Encapuslation;
+Console.WriteLine("====================================");
+Console.WriteLine("Bank Account Example");
+Console.WriteLine("====================================");
+BankAccount account = new BankAccount(500);
+Console.WriteLine($"Initial Balance: {account.Balance}");
+account.Deposit(200);
+Console.WriteLine($"Balance after deposit: {account.Balance}");
+account.Withdraw(100);
+Console.WriteLine($"Balance after withdrawal: {account.Balance}");
+//account.balance;  not accessible due to encapsulation
+Console.WriteLine("====================================");
+Console.WriteLine("Coffe Machine Example");
+Console.WriteLine("====================================");
+CoffeeMachine coffeeMachine = new CoffeeMachine(1000, 500);
+coffeeMachine.MakeLatte();
+Console.WriteLine($"Coffee beans left: {coffeeMachine.BeansLeft()}");
