@@ -17,4 +17,4 @@ using CSharp.Array;
 // CoffeeMachine coffeeMachine = new CoffeeMachine(1000, 500);
 // coffeeMachine.MakeLatte();
 // Console.WriteLine($"Coffee beans left: {coffeeMachine.BeansLeft()}");
-SubArray.Subarray_of_size_k_with_given_sum();
+SubArray.Count_subarrays_with_all_elements_greater_than_K();

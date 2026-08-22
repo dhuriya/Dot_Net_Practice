@@ -145,5 +145,23 @@ namespace CSharp.Array
 
             Console.WriteLine(string.Join(" ", arr));
         }
+        public static void Count_subarrays_with_all_elements_greater_than_K()
+        {
+            int[] arr = {8, 25, 10, 19, 19, 18, 20, 11, 18};
+            int k = 13;
+            int count = 0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                for(int j = i; j < arr.Length; j++)
+                {
+                    if (arr[j] <= k)
+                    {
+                        break;
+                    }
+                    count++;
+                }
+            }
+            Console.WriteLine($"Count of : {count}");
+        }
     }
 }
