@@ -1,0 +1,33 @@
+dotnet --version
+
+crate project cmd
+dotnet new webapi -n MyWebApi --use-controllers
+Step 1: we need to install three Pakage
+I   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+II  dotnet add package Microsoft.EntityFrameworkCore.Design
+III dotnet tool install --global dotnet-ef
+
+Step 2:
+---------------------------------
+docker --version
+docker run -e "ACCEPT_EULA=Y" \
+-e "MSSQL_SA_PASSWORD=Deepu@123!" \
+-p 1433:1433 \
+--name sqlserver \
+-d mcr.microsoft.com/mssql/server:2022-latest
+
+User: sa
+Password: Deepu@123!
+Server: localhost,1433
+
+
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost,1433;Database=MyWebApiDb;User Id=sa;Password=YourStrongPassword123!;TrustServerCertificate=True;"
+}
+Step 3: Add ApplicationDbContext file where can inherit DbContext and here inside the Dbset we can add out table
+
+Step 4:  To Register the ConnectionStrings in the Program.cs file.
+
+Step 5: To make that table in database we need to run command
+dotnet ef migrations add InitialCreate
+dotnet ef database update

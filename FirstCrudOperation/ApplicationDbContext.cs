@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FirstCrudOperation.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace FirstCrudOperation
+{
+    public class ApplicationDbContext: DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+            
+        }
+        public DbSet<User> Users {get;set;}
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Product> Products { get; set; }
+    }
+}
