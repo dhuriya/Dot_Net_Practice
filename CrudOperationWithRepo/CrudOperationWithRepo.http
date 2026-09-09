@@ -1,0 +1,6 @@
+@CrudOperationWithRepo_HostAddress = http://localhost:5111
+
+GET {{CrudOperationWithRepo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

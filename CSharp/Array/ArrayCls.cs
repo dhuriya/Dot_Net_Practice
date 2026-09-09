@@ -121,6 +121,37 @@ namespace CSharp.Array
         public static void allSubArray()
         {
             int[] arr = {1, 2, 3};
+            for(int i = 0; i < arr.Length; i++)
+            {
+                for(int j = i; j < arr.Length; j++)
+                {
+                    for(int k = i;k<=j;k++){
+                        Console.Write(arr[k]+" ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+        public static void ReverseArray()
+        {
+            int[] arr = {1, 4, 3, 2, 6, 5};
+            int n = arr.Length;
+            PrintArray(arr);
+            for(int i = 0; i < n/2; i++)
+            {
+                int temp = arr[i];
+                arr[i] = arr[n-i-1];
+                arr[n-i-1]=temp;
+            }
+            PrintArray(arr);
+        }
+        private static void PrintArray(int[] arr)
+        {
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+            Console.WriteLine();
         }
     }
 }

@@ -12,3 +12,9 @@ we can use using keyword to import namespaces
 5 why we use using keyword?
 6 why we user Program.cs file?
 it is entry point of .net core application and it first file that will run when we run the application
+6 what is the contructor?
+7 what is single responsibitiy principle?
+8 what is http methods?
+9 what are tge status code?
+10 what is the access specifier
+-> Public and private

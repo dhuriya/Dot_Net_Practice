@@ -21,4 +21,6 @@ using CSharp.Array;
 //ArrayCls.alternateByRecusion(0);
 //ArrayCls.LeadersinArray();
 //ArrayCls.Leader();
-ArrayCls.RemoveDuplicate2();
+//ArrayCls.RemoveDuplicate2();
+//ArrayCls.allSubArray();
+ArrayCls.ReverseArray();

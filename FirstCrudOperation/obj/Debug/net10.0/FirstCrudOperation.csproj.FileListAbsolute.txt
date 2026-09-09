@@ -164,3 +164,6 @@
 /workspaces/Dot_Net_Practice/FirstCrudOperation/obj/Debug/net10.0/FirstCrudOperation.pdb
 /workspaces/Dot_Net_Practice/FirstCrudOperation/obj/Debug/net10.0/FirstCrudOperation.genruntimeconfig.cache
 /workspaces/Dot_Net_Practice/FirstCrudOperation/obj/Debug/net10.0/ref/FirstCrudOperation.dll
+/workspaces/Dot_Net_Practice/FirstCrudOperation/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
+/workspaces/Dot_Net_Practice/FirstCrudOperation/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/workspaces/Dot_Net_Practice/FirstCrudOperation/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll

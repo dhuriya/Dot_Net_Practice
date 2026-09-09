@@ -1,3 +1,5 @@
+previous folder in cmd-> cd ..
+
 dotnet --version
 
 crate project cmd
@@ -6,6 +8,10 @@ Step 1: we need to install three Pakage
 I   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 II  dotnet add package Microsoft.EntityFrameworkCore.Design
 III dotnet tool install --global dotnet-ef
+
+dotnet add package Swashbuckle.AspNetCore
+-------swagger
+https://legendary-fortnight-gwxgp4rgr5gc9xx7-5241.app.github.dev/swagger/index.html
 
 Step 2:
 ---------------------------------
@@ -31,3 +37,8 @@ Step 4:  To Register the ConnectionStrings in the Program.cs file.
 Step 5: To make that table in database we need to run command
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+
+---------------------------
+docker ps
+docker start sqlserver
+docker ps
