@@ -6,6 +6,8 @@ dotnet --version
 
 crate project cmd
 dotnet new webapi -n MyWebApi --use-controllers
+.net core project with dependecy injection and we can repository pathern or service also here we are implement 
+command and query architectured
 Step 1: we need to install three Pakage
 I   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 II  dotnet add package Microsoft.EntityFrameworkCore.Design
@@ -51,6 +53,10 @@ Step 4:  To Register the ConnectionStrings in the Program.cs file.
 Step 5: To make that table in database we need to run command
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+
+Step 6: firstly we wil make interface and service
+step 7: and we inject interface in controller rather then writing all the business logic here and add crud api
+Step 8: We need to register dependecy injection services in program.cs file
 
 ---------------------------
 docker ps

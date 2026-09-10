@@ -18,3 +18,9 @@ it is entry point of .net core application and it first file that will run when 
 9 what are tge status code?
 10 what is the access specifier
 -> Public and private
+11 What is the interface in C#?
+12 What is abstraction in C#?
+13 how we can implement dependecy injection ?
+14 what is the difference between IEnumerable and IQueryable ?
+15 how we can achieve the multiple inheritance in C#?
+15 what is the Solid principle and its types?

@@ -8,3 +8,4 @@ public class Product
     public int Quantity { get; set; }
     public string Description {get;set;}
 }
+// single responibility principle (SRP) states that a class should have only one reason to change, meaning it should be
