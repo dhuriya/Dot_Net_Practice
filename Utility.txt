@@ -14,6 +14,9 @@ II  dotnet add package Microsoft.EntityFrameworkCore.Design
 III dotnet tool install --global dotnet-ef
 dotnet add package Microsoft.EntityFrameworkCore --version 10.0.4
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 10.0.4
+IV AutoMapper for Dto mapping
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
 -------------
 dotnet remove package Microsoft.EntityFramework.SqlServer
 
@@ -53,7 +56,11 @@ Step 4:  To Register the ConnectionStrings in the Program.cs file.
 Step 5: To make that table in database we need to run command
 dotnet ef migrations add InitialCreate
 dotnet ef database update
-
+Step 6: we can create folder
+    DTO folder
+      Request folder
+      Response folder
+Step 7: we need to add folder for AutoMapper and need to mapping there
 Step 6: firstly we wil make interface and service
 step 7: and we inject interface in controller rather then writing all the business logic here and add crud api
 Step 8: We need to register dependecy injection services in program.cs file

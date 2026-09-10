@@ -24,3 +24,39 @@ it is entry point of .net core application and it first file that will run when 
 14 what is the difference between IEnumerable and IQueryable ?
 15 how we can achieve the multiple inheritance in C#?
 15 what is the Solid principle and its types?
+
+What is Dto? and why we use dto
+DTO (Data Transfer object)->
+DTO (Data Transfer object) is a simple object used to transfer only required data between application layers
+(like API, Service, and Database) without exposing the full internal entity or business logic.
+
+Explanation-> DTO is used as a data contaier that controls what data goes in and what data goes out of your application.
+Instead of sending your full database entity to the client, you Create a DTO that includes only needed fields. this makes
+your application more secure, clean, and maintainable.
+
+Think like this:
+Entity = Real database model(contains all properties)
+DTO = Filtered version used for communication
+
+Why we Use DTO?
+Hide sensitive data(like Password, Tokes)
+Imporve Perormance by sending only needed fields
+Separate API structure from Database structure
+Prevent overposting and unwanted updates
+Follow Clean Architectured / Onion Architecture
+
+Simple Example-:
+pulic class user
+{
+    public int Id{get;set;}
+    pulic string Name{get;set;}
+    public string PasswordHash{get;set}
+}
+DTO-:
+pulic class UserResponse
+{
+    public int Id{get;set;}
+    public string Name{get;set;}
+}
+Client recevies safe and limited data.
+why asyn and await?
