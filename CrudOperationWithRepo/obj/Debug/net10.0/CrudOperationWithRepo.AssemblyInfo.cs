@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudOperationWithRepo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9035544fa75fd71c926dc087d0d7ee2ce01cc0eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+688b20c6d2a082d87ed3d002627bd550626a1351")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudOperationWithRepo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudOperationWithRepo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

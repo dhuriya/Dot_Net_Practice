@@ -20,10 +20,23 @@ it is entry point of .net core application and it first file that will run when 
 -> Public and private
 11 What is the interface in C#?
 12 What is abstraction in C#?
-13 how we can implement dependecy injection ?
+13 how we can implement dependecy injection and its types?
 14 what is the difference between IEnumerable and IQueryable ?
 15 how we can achieve the multiple inheritance in C#?
-15 what is the Solid principle and its types?
+16 what is the Solid principle and its types?
+17 what is Dto? and why we use dto?
+18 why asyn and await?
+
+19 what are the four pillar of oops? -> APIE
+-- Abstraction
+-- Polymorphism
+-- inheritance
+-- Encapsulation
+20 what is solid principle
+21 what are the relationship in the .net core?
+    1. One to one Relationship (one User table have only one Address table)
+    2. One to many Relationship (one User table have Multiple Order table)
+    3. Many to many Relationship (multiple product have multiple categories)
 
 What is Dto? and why we use dto
 DTO (Data Transfer object)->
@@ -59,4 +72,46 @@ pulic class UserResponse
     public string Name{get;set;}
 }
 Client recevies safe and limited data.
+
 why asyn and await?
+async and await are keyword used to run long operations (like database or API calls)
+asynchronously so the application thread is not blocked while waiting for the result.
+
+asyn/await helps you handle multiple taska efficiently without keeping threads stuck waiting/
+
+pulic asyn Task<List<User>> GetUsersAsync()
+{
+    //await pauses here without blocking the thread
+    var  users = await _context.Users.ToListAsync();
+    return users;
+}
+//Controller method
+public async Task<IActionResult> GetUsers()
+{
+    var data = await _userService.GetUsersAsync();
+    return Ok(data);
+}
+what happen here:
+async -> allows method to run asynchronously
+await -> waits for result without blocking the server thread
+Server can handle other requests meanwhile
+
+Thread Real worker that runs code on CPU
+Task Logical operation that may use a thread internally
+
+think like this:
+Task -> Job Ticket
+Thread -> worker doing the Job
+
+//Synchronous programming
+we can use thread 1 we are getting list of products from the database that time it blocks that thread.
+
+//asynchronously programming
+we can use thread 1 start fetching data from the database. with the help of await just blocked or sit there to wait the response it goes to back
+to the thread pool and ready to help other task. and then once the data comes back the response, any avaiable thread it might be thread 3, or 4, 5,1,
+pulic asyn Task<List<User>> GetUsersAsync()
+{
+    //await pauses here without blocking the thread
+    var  users = await _context.Users.ToListAsync();
+    return users;
+}
