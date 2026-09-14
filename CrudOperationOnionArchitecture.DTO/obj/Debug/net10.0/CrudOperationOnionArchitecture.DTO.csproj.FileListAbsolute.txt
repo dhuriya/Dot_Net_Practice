@@ -1,0 +1,12 @@
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/bin/Debug/net10.0/CrudOperationOnionArchitecture.DTO.deps.json
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/bin/Debug/net10.0/CrudOperationOnionArchitecture.DTO.dll
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/bin/Debug/net10.0/CrudOperationOnionArchitecture.DTO.pdb
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.AssemblyInfoInputs.cache
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.AssemblyInfo.cs
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.csproj.CoreCompileInputs.cache
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.sourcelink.json
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.dll
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/refint/CrudOperationOnionArchitecture.DTO.dll
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/CrudOperationOnionArchitecture.DTO.pdb
+/workspaces/Dot_Net_Practice/CrudOperationOnionArchitecture.DTO/obj/Debug/net10.0/ref/CrudOperationOnionArchitecture.DTO.dll

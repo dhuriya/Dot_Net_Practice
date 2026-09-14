@@ -6,6 +6,7 @@ dotnet --version
 
 crate project cmd
 dotnet new webapi -n MyWebApi --use-controllers
+create class libary project -------------------> dotnet new classlib -n YourProjectName
 .net core project with dependecy injection and we can repository pathern or service also here we are implement 
 command and query architectured
 Step 1: we need to install three Pakage

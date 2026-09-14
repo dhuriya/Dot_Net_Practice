@@ -5,6 +5,12 @@ it help of to communication with c# object rather then writing raw sql query.
 2 why we use appsettings.json file?
 in the appsettings.json file we can write all the configuration here
 
+AsNoTracking?
+
+AsSplitQuery?
+
+What is the Eager loading and lazy loading?
+
 3 why we use using keyword?
 we can use using keyword to import namespaces
 
