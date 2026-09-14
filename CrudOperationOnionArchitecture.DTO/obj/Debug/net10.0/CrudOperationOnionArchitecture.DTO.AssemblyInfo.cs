@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudOperationOnionArchitecture.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57fef1b250818681eb39a9be3162289ccbeee497")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a51a3da1607a07a0ab744a48efe2da7ff9be9760")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudOperationOnionArchitecture.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudOperationOnionArchitecture.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
