@@ -31,6 +31,7 @@ namespace JwtTokenBaseAuthentication.Services
                 Name = userRegisterDto.Name,
                 Email = userRegisterDto.Email,
                 Username = userRegisterDto.Username,
+                Role = userRegisterDto.Role,
                 Password = userRegisterDto.Password
             };
             _context.Users.Add(user);
@@ -77,6 +78,7 @@ namespace JwtTokenBaseAuthentication.Services
             {
                 new Claim("Id", user.Id.ToString()),
                 new Claim(ClaimTypes.Name,user.Name),
+                new Claim(ClaimTypes.Role, user.Role),
                 new Claim("Username",user.Username),
                 new Claim(ClaimTypes.Email, user.Email),
             };

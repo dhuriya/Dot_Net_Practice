@@ -41,3 +41,50 @@ step 2: add Configuration in appsetting.json file
   payload: user information (like username,userrole,userid)
 
   signature:
+
+  step 3: generate toke 
+
+-------------------------------------------------------------------
+this is put in program.cs file----------->
+  builder.Services.AddSwaggerGen(Options => {
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token using the Bearer scheme. Example: \"Bearer {token}\""
+    });
+    options.AddSecutiryRequirement(new OpenApiSecurityRequirement{
+        {
+            new OpenApiSecurityScheme{
+                Reference = new OpenApiReference{
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer:
+                }
+            },
+            new string[]{}
+        }
+    });
+  });
+======================
+  var jwtSetting = builder.Configuraton.GetSection("Jwt");
+  builder.Service.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = JwtBearerDefault.AuthenicationScheme;
+    options.DefaultChallengeScheme =  JwtBearerDefault.AuthenicationScheme;
+  })
+  .AddJwtBearer(options => {
+    options.TokenValidationParameters = nwe TokenValidationParameters{
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateIssuerSigningKey = true,
+        ValidaIssuer = jwtSettings["Issure],
+        ValidAudience = jwtSetting["Audience"],
+        IssuerSigningKey = new SymmeticSecurityKey(System.Text.Encoding.GetBytes(jwtSetting["Key"])),
+    };
+  })
+
+  app.UseAuthentication();
+  app.UseAuthorization();
+
+
+  ----------------------------------------------------------------

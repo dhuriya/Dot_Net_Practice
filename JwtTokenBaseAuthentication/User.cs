@@ -13,6 +13,7 @@ namespace JwtTokenBaseAuthentication
         public string? Username { get; set; }
         //Securely store the password in the database.
         public string?  Password { get; set; }
+        public string Role{get;set;}
     }
     
 }
