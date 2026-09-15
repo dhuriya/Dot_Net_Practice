@@ -9,5 +9,6 @@ namespace JwtTokenBaseAuthentication.Services.IServices
     public interface IUserService
     {
         Task<UserResponseDto> Register(UserRegisterDto userRegisterDto);
+        Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto);
     }
 }

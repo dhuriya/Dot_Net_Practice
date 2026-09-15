@@ -26,3 +26,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 -------------------------------------
 this is for jwtTokenAutentication
 --------------------------------------
+step 1: dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
+step 2: add Configuration in appsetting.json file
+"Jwt": {
+    "Key": "",
+    "Issure": "JwtTokenBaseAuthentication",
+    "Audience": "JwtTokenBaseAuthentication",
+    "ExpireTimeDurationInMinutes": 60
+  }
+  -------------->Token will divided into three parts
+  header : jwt
+
+  payload: user information (like username,userrole,userid)
+
+  signature:

@@ -24,5 +24,30 @@ namespace JwtTokenBaseAuthentication.Controllers
             var result = await _userService.Register(userRegisterDto);
             return Ok(result);
         }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginRequestDto loginRequestDto)
+        {
+            try
+            {
+                var result = await _userService.Login(loginRequestDto);
+                return Ok(new
+                {
+                    message = "Login successful",
+                    Token = result.Token,
+                    User = result.User
+                });
+            }catch(Exception ex)
+            {
+                return BadRequest(new
+                {
+                    message = "Login failed",
+                    error = ex.Message
+                });
+            }
+            finally
+            {
+                Console.WriteLine("This is the finally block, it will be executed regardles of whether an exception is");
+            }
+        }
     }
 }
