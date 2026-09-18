@@ -1,0 +1,198 @@
+------------------------
+Q What is Web Api?
+------------------------
+A Web API (Web Application Programming Interface) is a bridge that enables two different software applications to 
+communicate with each other over the internet. Instead of directly connecting databases or systems, APIs define Rules, 
+Protocols, and Data Formats that applications can use to send requests and receive responses. In simple terms, A Web 
+API is like a waiter in a restaurant; it takes your order (request), passes it to the kitchen (server), and brings 
+back the food (response).
+-----------------------------
+Q What is ASP.NET Core Web API?
+------------------------------
+ASP.NET Core Web API is Microsoft’s modern framework for building HTTP-based services (RESTful APIs) on top of the 
+.NET Core platform. It enables developers to create lightweight, scalable, and secure APIs that multiple types of 
+clients can consume.
+--------------------------------
+Q What is Rest?
+------------------------------
+REST (Representational State Transfer) is not a technology or a framework, but an architectural style for designing 
+Distributed Systems. Its primary purpose is to define how clients (like browsers, mobile apps, or other applications) 
+and servers (back-end services) should communicate over a network
+--------------------------------
+Q What are the REST Principles?
+---------------------------------
+* Client-Server Architecture:
+REST enforces a clear separation of responsibilities:
+
+Client → Handles user interface, presentation, and experience.
+Server → Handles business logic, processing, and database/storage.
+They communicate using a standard interface (HTTP).
+
+Why it matters:
+Client and server can be developed, deployed, and scaled independently.
+UI changes (say, redesigning a mobile app) don’t affect the back-end logic.
+Server upgrades (such as database migrations) don’t break clients.
+Example: In Instagram, your mobile app (client) fetches profile data via the GET /users/{id} endpoint. The server 
+retrieves the data and returns it, regardless of whether the request originated from iOS, Android, or a web browser.
+
+* Stateless:
+The stateless constraint specifies that client-server communication must be stateless between requests. Each request from the client-server must be independent. The server does not store any session data between requests. Every request from the client should carry all necessary information (authentication, parameters, etc.) for the server to process it.
+
+Why it matters:
+Any server in a cluster can handle any request (better scalability).
+Simplifies server design (no need to track client state).
+Improves reliability (no “session lost” issues).
+Each request from the clients can be treated independently by the server.
+Example: When a client calls GET /orders/789, it sends an Authorization token in headers. The server validates the 
+token, fetches the order, and responds. The server doesn’t need to remember past interactions.
+
+* Cacheable:
+In real-time applications, some data provided by the server is not changed frequently, such as the list of Countries,
+ States, Cities, and products. REST allows clients (and intermediate proxies) to cache responses, improving 
+ performance and reducing server load. The server informs the client whether a response is cacheable and for how long, 
+ using headers such as Cache-Control or Expires.
+
+Why it matters:
+Faster responses for frequently accessed data.
+Reduces redundant server calls.
+Optimizes bandwidth usage.
+Frequently requested resources can be served from a cache instead of re-fetching from the server.
+Reduces the number of round-trip requests to the server.
+Example:
+A request GET /countries may rarely change. The server responds with:
+Cache-Control: max-age=86400
+This means the client can reuse the response for 24 hours without needing to request it again from the server.
+
+-----------------------
+Q What is HTTP?
+-----------------------
+HTTP (Hypertext Transfer Protocol) is the backbone of data communication on the web. It defines the rules for how 
+clients (like browsers or apps) send requests to servers and how servers respond with data. This protocol ensures 
+that when you access a website, the content (HTML, images, CSS, scripts) is transmitted properly between your device 
+and the server hosting the site. HTTP works as a request–response protocol where the client initiates communication 
+and the server fulfills it.
+------------------------------
+Q HTTP Request Components
+-----------------------------
+
+# Request Line:
+The Request Line is the first line of an HTTP request and specifies to the server the exact action the client wants to 
+perform, the resource it is targeting, and the HTTP version it supports. It always contains three parts: 
+HTTP Method:This represents the type of operation the client wants to perform on the server.
+Request Target / URL: This indicates the resource location. It could be:
+HTTP Version: Tells the server which version of HTTP the client is using.
+
+# Request Headers: 
+Host: Specifies the domain name of the target server (Host: www.example.com).
+User-Agent: Identifies the client software making the request (e.g., browser, mobile app, Postman, etc.).
+Accept: Lists the content types the client is willing to accept from the server (e.g., HTML, JSON, XML).
+Content-Type: When the request includes a body (like a POST, PUT, or PATCH request), this header indicates the format of the request body. Example: application/json, application/xml, etc.
+Authorization: Carries credentials, such as API keys or tokens, for authentication.
+Cookie: Includes any cookies previously stored by the browser to maintain sessions. This is used for state management.
+Cache-Control: Provides caching rules for both client and server.
+
+Request Body (Optional):
+The request body is the part of an HTTP request that carries data from the client to the server.
+
+-----------------------------
+Q HTTP Verbs or HTTP Methods:
+-----------------------------
+HTTP Methods (also known as HTTP Verbs) define the type of operation a client wishes to perform on a resource in a web 
+server. 
+# GET: Retrieves data from the server. It should not change the server state. Example: GET /users/123 fetches user
+details for user with ID 123.
+# POST: Sends data to the server to create a new resource. Example: POST /users with a JSON body containing user details creates a new user.
+# PUT: Updates an existing resource on the server. Example: PUT /users/123 with a JSON body updates the user with ID 123.
+# PATCH: Partially updates an existing resource. Example: PATCH /users/123 with a JSON body containing only the fields to be updated modifies specific attributes of the user with ID 123.
+# DELETE: Removes a resource from the server. Example: DELETE /users/123
+
+--------------------------------------------
+Q HTTP HEAD Method:
+--------------------------------------------
+The HTTP HEAD method is similar to the GET method, but it only retrieves the headers of a resource, without the 
+response body. It is often used to check if a resource exists, to get metadata, or to verify caching information 
+without downloading the entire content. 
+
+------------------------------------
+Q HTTP OPTIONS Method:
+------------------------------------
+The HTTP OPTIONS method is used to describe the communication options available for a specific resource or server.
+It allows clients to determine which HTTP methods are supported by the server for a given resource. This is 
+particularly useful for CORS (Cross-Origin Resource Sharing) preflight requests, where the client checks 
+the server's capabilities before making a full request. 
+
+------------------------------------
+Q What do you mean by Idempotent Methods?
+--------------------------------------
+Idempotent methods are HTTP methods that can be called multiple times without causing any side effects. In other words,
+calling an idempotent method once has the same effect as calling it multiple times. Examples of idempotent methods 
+include GET, PUT, and DELETE.
+Example (Idempotent): PUT Request: PUT /users/123 with a JSON body updates the user with ID 123.
+{
+  "Name": "John Doe",
+  "Email": "john@example.com"
+}
+
+---------------------------------
+Q What do you mean by Safe Methods?
+---------------------------------
+Safe methods are HTTP methods that do not modify the state of the server. They are intended for retrieving information 
+without causing any side effects. Examples of safe methods include GET and HEAD. 
+
+------------------------------------
+Q What is a Web Server?
+------------------------------------
+A web server is a software application that serves web content to clients over the internet. It listens for incoming 
+HTTP requests, processes them, and responds with the requested resources, such as HTML pages, images, or JSON data. 
+Web servers can also handle other tasks like logging, security, and load balancing.
+
+--------------------------------
+Q Why Do We Need a Web Server?
+--------------------------------
+We need a web server to host and serve web applications, APIs, and static content to clients. It acts as an 
+intermediary between the client (like a web browser or mobile app) and the server-side application or database. 
+Without a web server, clients would not be able to access the resources they need over the internet.
+
+-------------------------------
+Q What is Hosting?
+-------------------------------
+Hosting refers to the process of deploying and running a web application or API on a server so that it can be accessed 
+by clients over the internet. Hosting involves configuring the server environment, managing resources, 
+and ensuring that the application is available, secure, and performant. There are various hosting options available,
+including shared hosting, virtual private servers (VPS), dedicated servers, and cloud hosting platforms like
+Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+
+-------------------------------
+Q In-Process Hosting Model
+-------------------------------
+In the In-Process hosting model, the ASP.NET Core application runs within the same process as the web server 
+(like Kestrel or IIS). This model allows for better performance and lower latency 
+because there is no inter-process communication overhead. The application and the web server share the same memory
+space, which can lead to faster request processing. However, it also means that if the application crashes, it can 
+take down the entire web server process, affecting other applications running in the same process.
+
+-------------------------------
+Q Out-of-Process Hosting Model
+-------------------------------
+In the Out-of-Process hosting model, the ASP.NET Core application runs in a separate process from the web server. 
+The web server (like Kestrel or IIS) acts as a reverse proxy, forwarding incoming requests to the application process. 
+This model provides better isolation and stability, as a crash in the application process will not affect the web 
+server or other applications running in different processes.
+
+-------------------------------
+Q What is Kestrel Web Server?
+-------------------------------
+Kestrel is a cross-platform web server for ASP.NET Core applications. It is designed to be lightweight, fast, and 
+efficient, making it suitable for both development and production environments. Kestrel can handle 
+HTTP/1.x and HTTP/2 protocols and is often used in combination with a reverse proxy server 
+(like IIS, Nginx, or Apache) for enhanced security and performance. It is the default web server included with 
+ASP.NET Core projects. 
+
+--------------------------------
+Q What is the Dependency Injection (DI) Design Pattern?
+--------------------------------
+Dependency Injection (DI) is a design pattern that promotes loose coupling between components in an application. 
+It allows a class to receive its dependencies from an external source rather than creating them internally. 
+This approach enhances testability, maintainability, and flexibility in software design. In ASP.NET Core, DI is a 
+built-in feature that enables developers to register services and inject them into controllers, middleware, or 
+other components as needed.
