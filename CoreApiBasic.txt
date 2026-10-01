@@ -196,3 +196,20 @@ It allows a class to receive its dependencies from an external source rather tha
 This approach enhances testability, maintainability, and flexibility in software design. In ASP.NET Core, DI is a 
 built-in feature that enables developers to register services and inject them into controllers, middleware, or 
 other components as needed.
+
+----------------------------------------------------------
+Differences between ActionResult and IActionResult:
+Let’s understand the differences between ActionResult and IActionResult.
+-----------------------------------------------------------------------
+
+* IActionResult is an Interface, whereas ActionResult is a Concrete Class that implements that 
+  interface.
+* IActionResult represents Any Possible Action Result, while ActionResult is a base class for the 
+  built-in result types such as OkResult, NotFoundResult, and BadRequestResult.
+* IActionResult offers Maximum Flexibility; you can return any custom type that implements the 
+  interface. ActionResult is used when you’re returning standard HTTP responses provided by the 
+  framework.
+* With IActionResult, you can create and use custom result classes easily. With ActionResult, you 
+  typically use predefined framework results.
+* Neither is strongly typed, but ActionResult serves as the foundation for ActionResult<T>, which 
+  introduces strong typing.
