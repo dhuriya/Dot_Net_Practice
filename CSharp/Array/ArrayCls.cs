@@ -260,5 +260,104 @@ namespace CSharp.Array
                 }
             }
         }
+        public static void reverseInteger()
+        {
+            int number =  12345;
+            int reverse = 0;
+            while(number != 0)
+            {
+                int digit = number % 10;
+                reverse = reverse * 10 + digit;
+                number = number / 10;
+            }
+            Console.WriteLine(reverse);
+        }
+        public static void palindrome()
+        {
+            int number = -121;
+            int original = number;
+            int reverse = 0;
+            while(number != 0)
+            {
+                int digit = number % 10;
+                reverse = reverse * 10 + digit;
+                number = number / 10;
+            }
+            if(original == reverse)
+            {
+                Console.WriteLine("Number is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("Number is not Palindrome");
+            }
+        }
+        public static void countDigit()
+        {
+            int number = 12345;
+            int count = 0;
+            if(number == 0)
+            {
+                count = 1;
+            }else if(number <= 0)
+            {
+                number = Math.Abs(number);
+                while(number != 0)
+                {
+                    number = number / 10;
+                    count++;
+                }
+            }
+            else
+            {
+                while(number != 0)
+                {
+                    number = number / 10;
+                    count++;
+                }
+            }
+            Console.WriteLine("Digit Count " + count);
+        }
+        public static void Sumofdigit()
+        {
+            int number = 345;
+            int sum = 0;
+            while(number != 0)
+            {
+                int digit = number % 10;
+                sum = sum + digit;
+                number = number / 10;
+            }
+            Console.WriteLine("Sum of Digit " +sum);
+        }
+        public static void factorial()
+        {
+            int number = 6;
+            int fac = 1;
+            // while(number != 0)
+            // {
+            //     int digit = number % 10;
+            //     fac = fac * digit;
+            //     number =number / 10;
+            // }
+            for(int i = 1; i<=number; i++)
+            {
+                fac = fac * i;
+            }
+            Console.WriteLine("Factorial " + fac);
+        }
+        public static void fibonacci()
+        {
+            int n = 10;
+            int first = 0;
+            int second = 1;
+            for(int i = 0; i< n; i++)
+            {
+                Console.Write(first + " ");
+                int next = first + second;
+                first = second;
+                second = next;
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ docker run -e "ACCEPT_EULA=Y" \
 -d mcr.microsoft.com/mssql/server:2022-latest
 
 docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'Deepu@123!' -C -Q "SELECT name FROM sys.databases;"
-
+docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Deepu@123!' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
 docker start sqlserver
 
 

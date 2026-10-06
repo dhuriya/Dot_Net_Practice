@@ -21,7 +21,7 @@ namespace ECommerceApp.Controllers
             _context = context;
         }
         [HttpPost("place")]
-        public async Task<IActionResult> PlaceOrder(OrderRequestDTO requestDTO)
+        public async Task<IActionResult> PlaceOrder([FromBody]OrderRequestDTO requestDTO)
         {
             try
             {
@@ -72,7 +72,33 @@ namespace ECommerceApp.Controllers
                 foreach(var items in requestDTO.OrderItems)
                 {
                     var product = products.First(p => p.ProductId == items.ProductId);
+                    product.Stock -= items.Quantity;
+                    product.UpdatedAt = DateTime.UtcNow;
+                    product.UpdatedBy = "System";
+                    //Create order item record
+                    order.OrderItems.Add(new OrderItem
+                    {
+                       ProductId = product.ProductId,
+                       Quantity = items.Quantity,
+                       UnitPrice = product.Price 
+                    });
                 }
+                order.TotalAmount = order.OrderItems.Sum(i => i.Quantity * i.UnitPrice);
+                _context.Orders.Add(order);
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    Message = "Order placed Successfully.",
+                    OrderId = order.OrderId
+                });
+            }catch(Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Message = "Unexpected error while placing the order.",
+                    ErrorMessage = ex.Message
+                });
             }
         }
     }
