@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudOperationOnionArchitecture.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ecf396aa27027c57e601f630eee405b6f092522")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56dd75ffebcbc26707797604105186214c7d545a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudOperationOnionArchitecture.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudOperationOnionArchitecture.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

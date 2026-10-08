@@ -359,5 +359,31 @@ namespace CSharp.Array
                 second = next;
             }
         }
+        public static void RomanToInt() 
+        {
+            string s = "MCMXCIV";
+            Dictionary<string, int> roman = new Dictionary<string, int>
+            {
+                { "I", 1 },{ "V", 5 },{ "X", 10 },{"L", 50},{"C", 100},{"D", 500},{"M", 1000}
+            };
+            int size = s.Length;
+            int number=0;
+            for(int i = 0; i< size; i++)
+            {
+                int value = roman[s[i].ToString()];
+                if(i + 1 < size && roman[s[i+1].ToString()] > value)
+                {
+                    Console.WriteLine("Value inside if: " + value);
+                    number = number - value;
+                }
+                else
+                {
+                    Console.WriteLine("Value else: " + value);
+                    number += value;   
+                }
+                
+            }
+            Console.WriteLine("Roman to Integer: " + number);
+        }
     }
 }

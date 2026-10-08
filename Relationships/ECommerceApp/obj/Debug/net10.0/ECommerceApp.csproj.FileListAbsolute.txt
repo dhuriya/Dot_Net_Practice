@@ -167,3 +167,5 @@
 /workspaces/Dot_Net_Practice/Relationships/ECommerceApp/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /workspaces/Dot_Net_Practice/Relationships/ECommerceApp/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /workspaces/Dot_Net_Practice/Relationships/ECommerceApp/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/workspaces/Dot_Net_Practice/Relationships/ECommerceApp/bin/Debug/net10.0/Castle.Core.dll
+/workspaces/Dot_Net_Practice/Relationships/ECommerceApp/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Proxies.dll

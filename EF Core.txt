@@ -1,0 +1,13 @@
+------------------------------------------------
+How to Implement Lazy Loading in EF Core?
+------------------------------------------------
+// Q What is the Lazy Loading
+//Lazy loading in EF Core means related data is loaded only when you access it, instead 
+//of all at once.
+
+Step 1: Install the Required Proxy Package for Lazy Loading
+dotnet add package Microsoft.EntityFrameworkCore.Proxies
+Install-Package Microsoft.EntityFrameworkCore.Proxies
+
+Step 2: Enable Proxies in Program.cs
+Step 3: Mark Navigation Properties as virtual
