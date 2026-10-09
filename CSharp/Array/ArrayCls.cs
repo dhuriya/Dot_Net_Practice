@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CSharp.Array
@@ -384,6 +385,20 @@ namespace CSharp.Array
                 
             }
             Console.WriteLine("Roman to Integer: " + number);
+        }
+        public static void reverseString()
+        {
+            string str="madam";
+            StringBuilder reverse = new StringBuilder();
+            for(int i = str.Length-1; i>= 0; i--)
+            {
+                reverse.Append(str[i]);
+            }
+            if(str == reverse.ToString())
+            {
+                Console.WriteLine("Palindrome");    
+            }
+            Console.WriteLine(reverse);
         }
     }
 }

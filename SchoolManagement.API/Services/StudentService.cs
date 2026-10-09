@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SchoolManagement.API.Interface;
 using SchoolManagement.API.IRepository;
 using SchoolManagement.API.Model;
@@ -16,9 +12,14 @@ namespace SchoolManagement.API.Services
         {
             _studentRepository = studentRepository;
         }
-        public async Task<Student> CreateAysnc(Student student)
+        public Task<Student> CreateAsync(Student student)
         {
-            throw new NotImplementedException();
+            return _studentRepository.CreateAsync(student);
+        }
+
+        public Task<IEnumerable<Student>> getAllStudentsAsync()
+        {
+            return _studentRepository.getAllStudentsAsync();
         }
     }
 }

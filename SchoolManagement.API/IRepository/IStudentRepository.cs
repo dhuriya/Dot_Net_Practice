@@ -9,5 +9,6 @@ namespace SchoolManagement.API.IRepository
     public interface IStudentRepository
     {
         Task<Student> CreateAsync(Student student);
+        Task<IEnumerable<Student>> getAllStudentsAsync();
     }
 }

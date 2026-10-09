@@ -8,6 +8,7 @@ namespace SchoolManagement.API.Interface
 {
     public interface IStudentService
     {
-        Task<Student> CreateAysnc(Student student);
+        Task<Student> CreateAsync(Student student);
+        Task<IEnumerable<Student>> getAllStudentsAsync();
     }
 }
