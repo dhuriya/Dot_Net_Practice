@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MapperlyOrderDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de76c30bb018221eb4374df3fbb2a8189aba98f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94b7a0c22094571fb9d394de9d54b483af8d63e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MapperlyOrderDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MapperlyOrderDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
