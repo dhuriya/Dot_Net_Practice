@@ -37,4 +37,6 @@ using CSharp.Array;
 //ArrayCls.factorial();
 //ArrayCls.fibonacci();
 //ArrayCls.RomanToInt();
-ArrayCls.reverseString();
+//ArrayCls.reverseString();
+//ArrayCls.removeSpacefromstring();
+ArrayCls.secondLargestNumber();

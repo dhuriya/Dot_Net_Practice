@@ -400,5 +400,37 @@ namespace CSharp.Array
             }
             Console.WriteLine(reverse);
         }
+        public static void removeSpacefromstring()
+        {
+            string str = "Hello World CSharp";
+            string result = "";
+            foreach(char ch in str)
+            {
+                if(ch!= ' ')
+                {
+                    result +=ch;
+                }
+            }
+            Console.Write(result);
+        }
+        public static void secondLargestNumber()
+        {
+            int[] arr = {10,5,20,8,15};
+            int largest = int.MinValue;
+            int secondLargest = int.MinValue;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(arr[i] > largest)
+                {
+                    secondLargest = largest;
+                    largest = arr[i];
+                }
+                else if(arr[i] > secondLargest && arr[i] < largest)
+                {
+                    secondLargest = arr[i];
+                }
+            }
+            Console.WriteLine(secondLargest);
+        }
     }
 }

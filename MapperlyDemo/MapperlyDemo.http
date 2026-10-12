@@ -1,0 +1,6 @@
+@MapperlyDemo_HostAddress = http://localhost:5050
+
+GET {{MapperlyDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

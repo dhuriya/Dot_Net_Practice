@@ -1,0 +1,10 @@
+Step 1 : Create a project name = whatever you want
+
+Step 2 : Install Required Packages
+    -> EntityFrameworkCore - dotnet add package Microsoft.EntityFrameworkCore --version 10.0.4
+    -> EntityFramework.SqlServer -dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 10.0.4
+    -> EntityFramework.tools - dotnet add package Microsoft.EntityFrameworkCore.Design
+    -> Riok.Mapperly - dotnet add package Riok.Mapperly
+    -> Swagger UI - dotnet add package Swashbuckle.AspNetCore
+
+Step 3: Creating Entities inside Entities folder

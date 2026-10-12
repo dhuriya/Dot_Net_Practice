@@ -17,7 +17,7 @@ dotnet add package Microsoft.EntityFrameworkCore --version 10.0.4
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 10.0.4
 IV AutoMapper for Dto mapping
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
-
+dotnet add package Riok.Mapperly
 -------------
 dotnet remove package Microsoft.EntityFramework.SqlServer
 
