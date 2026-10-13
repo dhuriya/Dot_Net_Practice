@@ -7,6 +7,9 @@ namespace MapperlyOrderDemo.Entities
 {
     public class Address
     {
-        public int MyProperty { get; set; }
+        public string Line1 { get; set; } = null!;
+        public string City { get; set; } = null!;
+        public string State { get; set; } = null!;
+        public string Pincode { get; set; } = null!;
     }
 }

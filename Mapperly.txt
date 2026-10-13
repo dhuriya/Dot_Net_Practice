@@ -8,3 +8,9 @@ Step 2 : Install Required Packages
     -> Swagger UI - dotnet add package Swashbuckle.AspNetCore
 
 Step 3: Creating Entities inside Entities folder
+
+Step 4: Creating DTOs
+
+Step 5: Creating DbContext.cs file
+
+Step 6: Creating Mapperly Mappers inside Mappers folder
