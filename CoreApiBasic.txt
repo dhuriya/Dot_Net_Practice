@@ -213,3 +213,10 @@ Let’s understand the differences between ActionResult and IActionResult.
   typically use predefined framework results.
 * Neither is strongly typed, but ActionResult serves as the foundation for ActionResult<T>, which 
   introduces strong typing.
+
+-------------------------------------------------------------
+What are Default Conventions in EF Core?
+--------------------------------------------------------------
+Default Conventions are predefined Rules EF Core uses to determine how entity classes map to database 
+tables and columns. These conventions enable EF Core to Automatically Generate Database Schemas without 
+requiring explicit configuration.
