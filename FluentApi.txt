@@ -1,0 +1,14 @@
+--------------------------------------------
+What is Fluent API in Entity Framework Core?
+-------------------------------------------
+the Fluent API is a powerful configuration mechanism that allows developers to precisely 
+control how their C# classes (entities) are mapped to database tables. The term “Fluent” 
+comes from the Fluent Interface Design Pattern, where methods are chained together in a
+readable, expressive manner.
+
+---------------------------------------------------
+What is the Fluent Interface Design Pattern?
+---------------------------------------------------
+The Fluent Interface Design Pattern is a software design approach that focuses on making code 
+more readable, expressive, and natural to write. It does this by allowing us to call multiple 
+methods in a single, continuous chain, rather than writing separate statements for each operation.

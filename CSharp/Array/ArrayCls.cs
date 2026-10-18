@@ -432,5 +432,23 @@ namespace CSharp.Array
             }
             Console.WriteLine(secondLargest);
         }
+        public static void ArrayIsSorted()
+        {
+            int[] arr = {2,3,4,5,6,7,9};
+            // 0 ya 1 element ka array hamesha sorted hota hai
+            if(arr == null || arr.Length <=1)
+                Console.WriteLine("Array has 1 or 0 element.");
+
+            for(int i = 0; i< arr.Length-1; i++)
+            {
+                if(arr[i] > arr[i + 1])
+                {
+                    Console.WriteLine("Array is not sorted");
+                    return;
+                }
+            }
+            Console.WriteLine("Array is sorted!");
+        }
+        
     }
 }

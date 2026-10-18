@@ -39,4 +39,7 @@ using CSharp.Array;
 //ArrayCls.RomanToInt();
 //ArrayCls.reverseString();
 //ArrayCls.removeSpacefromstring();
-ArrayCls.secondLargestNumber();
+//ArrayCls.secondLargestNumber();
+//ArrayCls.ArrayIsSorted();
+//ArrayBasic.CountUnique();
+ArrayBasic.leftRotatebyOne();
