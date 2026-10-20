@@ -14,3 +14,67 @@ Step 4: Creating DTOs
 Step 5: Creating DbContext.cs file
 
 Step 6: Creating Mapperly Mappers inside Mappers folder
+
+step 7: Services Using Mapperly
+
+Step 8: Configure SQL Server Connection in appsettings.json
+
+Step 9 : Register DbContext, Services, and Mappers in Program.cs
+
+Step:10 Creating Controllers
+
+step 11 : Build the project
+Mapperly generates mapping code during build time. By enabling compiler-generated files,
+<PropertyGroup>
+  <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+</PropertyGroup>
+
+step 12: Create the database (Migrations)
+In Package Manager Console, please execute the following commands:
+Add-Migration Mig1
+Update-Database
+
+Create Customer
+POST /api/customers
+
+Request Body
+{
+  "FullName": "Anil Verma",
+  "Mobile": "9876501234",
+  "Email": "anil.verma@test.com",
+  "AddressLine1": "Sector 21",
+  "City": "Noida",
+  "State": "Uttar Pradesh",
+  "Pincode": "201301"
+}
+
+Create Order — POST /api/orders
+POST /api/orders
+
+Request Body
+{
+  "CustomerId": 1,
+  "Items": [
+    {
+      "ProductId": 1,
+      "Quantity": 2
+    },
+    {
+      "ProductId": 3,
+      "Quantity": 1
+    }
+  ],
+  "ShippingLine1": "221B Baker Street",
+  "ShippingCity": "London",
+  "ShippingState": "UK",
+  "ShippingPincode": "560001"
+}
+
+Conclusion:
+By combining Mapperly with EF Core and a clean service-based architecture, we achieve:
+
+Strong separation between Domain Models and API Contracts
+Compile-time safety for all mappings
+Better performance with zero runtime overhead
+Clear ownership of responsibilities across layers
+Transparent and debuggable mapping logic

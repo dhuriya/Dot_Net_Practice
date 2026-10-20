@@ -8,6 +8,7 @@ using Riok.Mapperly.Abstractions;
 
 namespace MapperlyOrderDemo.Mappers
 {
+    [Mapper]
     public partial class CustomerMapper
     {
         //ENTITY -> DTO MAPPING
@@ -36,6 +37,8 @@ namespace MapperlyOrderDemo.Mappers
         // Mapperly will generate the implementation for this method
         // at compile tiem using the rules defined above
         public partial CustomerResponseDTO ToDto(Customer customer);
+
+        public partial List<CustomerResponseDTO> ToDtos(List<Customer> customers);
         // DTO -> ENTITY MAPPING (CREATE CUSTOMER)
         // This method maps:
         // CreateCustomerResquestDTO -> Customer(Entity)
