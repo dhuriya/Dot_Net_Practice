@@ -1,0 +1,30 @@
+-------------------------
+What is a Branch?
+-------------------------
+A branch is like creating a separate copy of your work path where you can work independently without touchig the main project.
+Technically, abranch represents a separate line of development that starts from the current version of the code.
+-----------------------------
+Why Do we need a branch ?
+-----------------------------
+we need brahches because software development is not done in oe step. development happens gradually:
+* We add new features
+* We fix bugs
+* We test and improve code
+* We make mistake and correct them
+All of this takes time and sometimes changes can be wrong or incomplete.
+Without branches:
+* Everyone edits the same code
+* Mistakes can break the entire project 
+* Half-done work reaches stable code
+With branches:
+* you can work safely in isolation
+* You can test your changes before sharing
+* Other developers are not affected by your Mistakes
+-------------------------------
+What is the Main Branch?
+---------------------------------
+The main brahch(usually named main) is the most important branch in a project. it contains the stable and trusted 
+version of the code
+
+step Create the brahch from main
+* Goto View -> Git Respository or Git -> Manage Branches Then, right click main -> New Branch 
