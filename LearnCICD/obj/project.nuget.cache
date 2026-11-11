@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "cqdK1+eG7bE=",
+  "success": true,
+  "projectFilePath": "/workspaces/Dot_Net_Practice/LearnCICD/LearnCICD.csproj",
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/microsoft.aspnetcore.openapi/10.0.12/microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.openapi/2.12.0/microsoft.openapi.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}

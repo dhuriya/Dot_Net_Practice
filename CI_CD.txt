@@ -1,0 +1,112 @@
+-----------------------------------
+CI/CD Pipelines in .NET
+-----------------------------------
+CI/CD helps us automate the process of taking code from the developer machine to the live server. instead
+of doing everyting manually again and again, we create a proper workflow. that workflow makes the process 
+faster, safer, more professional, and much easier to manage in real projects.
+-------------------------------------------
+1. CI kya hota hai? (CI = Continuous Integration)
+------------------------------------------------------
+Jab developer apna code GitHub ya Azure DevOps par push karta hai, toh automatically:
+   * Code download hota hai.
+   * .NET application build hoti hai.
+   * Errors check hote hain.
+   * Unit tests run hote hain.
+---------------------------------------------------------
+2. CD kya hota hai? (CD = Continuous Delivery / Continuous Deployment)
+----------------------------------------------------------------------
+Iska kaam tested application ko deployment ke liye ready karna ya automatically server par deploy karna hai.
+Example:
+Aapki .NET Web API ready hai.
+CD automatically:
+   * Application publish karega.
+   * Publish files/package banayega.
+   * Server ya Azure App Service par deploy karega.
+   * Application users ke liye available ho jayegi.
+
+"CI/CD is an automated process used to build, test, and deploy .NET applications.
+CI stands for Continuous Integration, where code is automatically built and tested whenever developers 
+push changes.
+CD stands for Continuous Delivery or Continuous Deployment, where the tested application is prepared for 
+release or automatically deployed to the server.
+We can use GitHub Actions or Azure DevOps to implement CI/CD pipelines in .NET."
+
+
+-----------------------------------------
+What is Continuous Integration (CI)?
+-----------------------------------------
+Continuous Integration, or CI, is the practice of regularly adding code changes to a shared repository
+and automatically checking whether the project still works correctly. In simple language, whenever a 
+developer writes code and pushes it to GitHub, the system should automatically verify important things
+such as:
+* Is the code compiling properly?
+* Are all required packages available?
+* is the project building successfully?
+* Are the tests passing?
+* Is the application still in a healthy state?
+if these happen automatically whenever code changes are pushed, that is called Continuous Integration.
+
+
+------------------------------------------------------------
+what is Continuous Delivery (CD)?
+-------------------------------------------------------------
+Continuous Delivery means that after the code is successfully built and tested, it is automatically
+prepared and kept for development. this means the application is always in a deployable state.
+
+-> CI checks whether the application is healthy
+-> CD makes sure the application is ready to be released.
+
+----------------------------------------------------------------------
+Difference Between Continuous Delivery and Continuous Deployment
+----------------------------------------------------------------------
+Continuous Delivery :   (Manual Step for Deployment)
+    * Build happens automatically
+    * Tests run automatically
+    * Publish output is created automatically
+    * Approval needed before deployment
+Continuous Deployment : (Automatic Deployment)
+    * Build happens automatically
+    * Tests are run automatically
+    * Publish output is created automatically
+    * No approval before development
+
+----------------------------------------------------------------------
+CI/CD End-to-End Flow: Code -> Github -> Build -> Test -> Publish -> Deploy
+
+Code -> push to Git(Commit to GitHub) -> Build & Test (Trigger CI/CD) -> Publish(Artifacts) ->
+Deploy(Deploy) -> Production Server(Application Live)
+
+-------------------------------------
+Tools Used in Our CI/CD Setup
+---------------------------------------
+*Visual Studio:
+*Git: Local Repository -> Commit,Push,Pull,Branch,Merge
+*GitHub: Remote Repository -> Where we host the project repository online. it is the place where 
+   developer push code and where automation workflow can start.
+* GitHub Actions: Automatic the workflow
+   Github Actions is the automation tool in GitHub which is used to create CI/CD workflow. it can
+   automatically:
+   * Restore Dependencies
+   * Build the Project
+   * Run Tests
+   * Publish Output
+   * Trigger Deployment Steps
+* IIS: Host the application
+
+-----------------------------------------------------
+Common Real-Time Problems Solved by CI/CD
+----------------------------------------------------
+* It Works on my machine, but not on the server
+* Someone forgot to run tests
+* Wrong files were deployed.
+* The project failed after code Merge.
+* The deployment steps were different each time.
+* A bug reached Production because nobody checked properly
+* The team wasted too much time doing repeated manual work.
+
+Step 1: Create the ASP.NET Core Web API Project
+Step 2: Clean the project (means delete unnecessary file)
+Step 3: Add the Model class
+Step 4: Create Service folder and Service
+Step 5: implement Service
+Step 6: Add Controller

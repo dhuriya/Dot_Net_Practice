@@ -28,3 +28,10 @@ version of the code
 
 step Create the brahch from main
 * Goto View -> Git Respository or Git -> Manage Branches Then, right click main -> New Branch 
+
+-------------------------------------------------------
+What is a remote repository and why do teams use it?
+-------------------------------------------------------
+A Remote Respository is a repository stored on another location, usually on a server or cloud platform such as
+GitHup. it contains the same project history, branches, and commits, but it is available online so multiple
+developers can access it.
