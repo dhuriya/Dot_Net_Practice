@@ -110,3 +110,147 @@ Step 3: Add the Model class
 Step 4: Create Service folder and Service
 Step 5: implement Service
 Step 6: Add Controller
+Step 7: update program.cs file
+Step 8: Register Services
+Step 9: Run the Application
+Step 10:
+-------------------------------
+Build -> Build compiles the code and checks whether the application has any compile-time errors.
+------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------
+Rebuild -> Rebuild first cleans the old compiled files and then builds the solution again from scratch
+------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
+Publish -> Publish creates the deployable output of the project. This output is different from just
+building. it prepares the files needed to run the application on the target environment
+------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------
+Deploy -> Deploy means placing the published output on the target server, such as IIS
+---------------------------------------------------------------------------------------------
+
+Step 11: Initialize Git for the Project
+   -> select Git
+   -> Create Git Repository.
+Step 12: Understand Clone,Commit,Push and Pull
+
+Step 13: Connect the Visual Studio Project to GitHub
+
+Step 14: Understand Development and Production Configuration
+   -> appsettings.json: This is the common Configuration file used across environment
+   -> appsettings.Development.json: Used when the application runs in the Development environment
+   -> appsettings.Production.json: Used when the application runs in the Production environment
+
+Step 15: Manually Publish the project from Visual Studio
+
+Step 16: Understand IIS Prerequisites for ASP.NET Core Deployment
+   -> IIS must be enabled in windows
+   -> .NET 8 Hosting Bundle must be installed on the IIS machine
+   -> ASP.NET Core Module must be available
+   -> The deployment folder must have proper permissions
+
+Step 17: Manually Deploy The Published Files to Local IIS
+   -> Create a folder such as: c:\inetpub\StudentManaagement.API and the copy the published files from
+   the publish folder into this IIS folder.
+   -> Open IIS Manager
+
+   -> Create an Application Pool 
+      * Name: StudentManaagementAPIAppPool
+      * .NET CLR Version: No Managed Code
+   -> Create the IIS Site
+      * Site Name: StudentManaagement.API
+      * Physical Path: c:\Inetpub\StudentManaagement.API
+      * Binding: Choose a port like 8080
+      * Assign it to the application pool we just created in the previous steps
+   -> Start the Site
+
+Step 18: Set the environment in the publish profile
+
+----------------------------------------------------------------------------------------------
+building Continuous Integration(CI) Pipelines with GitHub Actions
+----------------------------------------------------------------------------------------------
+Continuous Integration workflow with GitHub ->
+
+Push to Main/
+Feature Branches -> Checkout Code -> Setup .NET 8 SDk -> Restore Nuget package -> Build solution -> Publish web API -> Artifacts(Publish output stored as Artifacts)
+
+Pull Request to
+Main 
+
+----------------------------------------------------------------------------------------
+Trigger the workflow
+The pipleine starts when one of these event happens:
+   -> A developer pushes code to Main
+   -> A developer pushes code to a Feature Branch
+   -> A developer creates or update a pull Request targeting Main
+
+-------------------------------------------------------------------------------------
+Basic GitHub Actions Terms
+Github Actions wroks like a Small Automated System inside out Github repository. We define what should
+happen, when it should happen, and where it should run. The four most important tems we need to know 
+are workflow, Job, Step, and Runner.
+
+workflow (The Complete Automation File)
+A workflow is the main automation file that tells Github what tasks to perform, it is written in YAML
+format and stored inside the .github/workflow/ folder of the repository
+
+You can think of a workflow as the full pipleine definition, it tells Github
+   -> When to start
+   -> What jobs to run
+   -> What steps each job shuld perform
+For Example, a workflow can tell Github:
+   -> Run when code is pushed to main
+   -> Build the project
+   -> Run tests
+   -> Publish the application
+
+Job - A group of related tasks
+A job is a collection of steps(tasks) that are executed together on the same runner. inside one workfllow,
+we can define one job or multiple jobs depending on our requirement. A job helps organize work into
+logical sections.
+For Example, one workflow may contain:
+   -> A build job
+   -> A test job
+   -> A deploy job
+Jobs can run
+   -> One after another, when one job depends on another
+   -> In parallel, when jobs are independent
+
+Step A single action inside a job
+A step is teh smallest working unit inside a job. Each step performs one specific action. A job is Managed
+up of multiple steps executed in sequence.
+   -> Checkout souce code
+   -> Install  .NET SDk
+   -> Restore NuGet package
+   -> Build solution
+   -> run tests
+
+Runner - The machine that executes the workflow
+A runner is the machine where the workflow job actually runs. Github needs a machine to execute commands
+like dotnet restore, dotnet build, or dotnet test. that machine is called the runner
+   -> in our case,we will use a GitHub-hosted runner called ubuntu-lates.
+   -> this means GitHub provides a temparary Linux machine for us automatically
+   -> That machine is created whn the workflow starts and used to execute the job steps
+
+workflow -> The full plan 
+job -> One major part of the plan 
+step -> One task inside that plan
+Runner -> The machine or worker doing the task 
+
+So, when GitHub Actions runs:
+   -> The workflow starts
+   -> It executes one or more jobs
+   -> Each job contains multiple steps
+   -> Those jobs run on a runner 
+
+Step 1: Add a very small Test Project first
+Create the xUnit TEst project 
+Step 2 : Add one simple Unit Test
+Step 3: Commit and push the test project
+Step 4: Creat the GitHub Actions Workflow Folder and file 
+Step 5:  Decide When the workflow Should Run
+we want the CI pipleine to run in two common situations:
+   -> When code is pushed to main or freature Branch
+   -> When a pull request targets main
