@@ -1,0 +1,52 @@
+-------------------------------------------------------
+Hierarchy 1: Payments (TPH – Table Per Hierarchy)
+-------------------------------------------------------
+Table Per Hierarchy (TPH) is the default inheritance mapping strategy in EF Core. Table Per Hierarchy 
+(TPH) stores all entities in an inheritance hierarchy within a single database table, regardless of their 
+class type.
+
+This table contains columns for all properties, both from the base class and any derived classes. A 
+special column, called the Discriminator Column, identifies which derived type each record belongs to. 
+This strategy provides high performance because no joins are required, and all data is read from one 
+table.
+
+When to Use TPH :
+    * The hierarchy is simple and not deeply nested.
+    * Derived classes share the most common properties.
+    * You want maximum read performance and simpler queries.
+    * Sparse nullable columns are acceptable.
+------------------------------------------------------------------------------------------    
+How to Implement Table Per Hierarchy (TPH) Inheritance in Entity Framework Core
+We need to follow the steps below to implement TPH inheritance in Entity Framework Core:
+------------------------------------------------------------------------------------------
+    * Create a Base Class and Derived Classes: Create a base class for the shared properties and derived 
+      classes for specific entities.
+    * Configure the Discriminator Column (Optional): EF Core automatically adds a discriminator column, 
+      but we can customize it using Fluent API.
+    * Configure TPH using Fluent API: Use the Fluent API to specify how the inheritance mapping should 
+      occur. We need to use the HasDiscriminator() method to define the discriminator column and values 
+      for each derived class.
+----------------------------------------------------
+Hierarchy 2: Users (TPT – Table Per Type):
+----------------------------------------------------
+Table Per Type (TPT) creates separate tables for each class in the hierarchy. The base table holds shared 
+properties, while each derived table holds unique fields. These are connected using Primary-Foreign Key 
+relationships.
+
+When to Use TPT
+  * Normalization is important.
+  * Entities have distinct fields (e.g., GSTNumber, LoyaltyPoints, etc.).
+  * You want to avoid null columns in shared tables.
+  * You can tolerate minor performance overhead due to joins.
+
+---------------------------------------------------------------
+Hierarchy 3: Notifications (TPC – Table Per Concrete Class):
+---------------------------------------------------------------
+Table Per Concrete Class (TPC) maps each non-abstract derived class to its own table. Each table includes 
+all properties of the base class; there is no shared table or discriminator.
+
+When to Use TPC
+  * Derived classes have completely different data structures.
+  * Queries are typically type-specific (e.g., only EmailNotifications).
+  * Joins are unnecessary or undesirable.
+  * Polymorphic queries (over all types) are not needed.
